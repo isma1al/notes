@@ -4,7 +4,8 @@ const App = {
             placeholderString: 'Введите название заметки',
             title: 'Список заметок',
             inputValue: '',
-            notes: []
+            notes: [],
+            state: 'ok'
         }        
     },
     methods: {
@@ -13,13 +14,21 @@ const App = {
         },
 
         addNewNote(){
-            this.notes.push(this.inputValue)
-            this.inputValue = ''      
+            if(this.inputValue){
+                this.notes.push(this.inputValue)
+                this.inputValue = ''
+                this.state = 'ok'
+            } else {
+                this.state = ''
+            }  
         },
-        inputKeyPress(event){
-            if(event.key === 'Enter'){
-                this.addNewNote()
-            }
+
+        toUpperCase(item){
+          return item.toUpperCase()
+        },
+
+        removeNote(index){
+           this.notes.splice(index,1)
         }
     }
 }
