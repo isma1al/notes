@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="theme.css">
+    <title>Vue</title>
+</head>
+<body>
+    
+    <div class="container" id="app">
+        <div class="card">
+            <h1> {{ title }} </h1>
+            <div class="form-control">
+                <input 
+                type="text" 
+                v-bind:placeholder="placeholderString"
+                v-on:input="inputChangeHandler" 
+                v-bind:value="inputValue" 
+                v-on:keypress="inputKeyPress"
+                >
+            </div>
+            <button v-on:click="addNewNote" class="btn">Добавить</button>
+            <hr>
+            <ul class="list">
+                <li class="list-item " v-for="myNote in notes">
+                    {{myNote}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+</body>
+</html>
