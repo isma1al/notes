@@ -150,14 +150,15 @@ h3 {
 .form-control input,
 .form-control select {
     margin: 0;
+    margin-bottom: 20px;
     margin-top: 7px;
     outline: none;
     border: 2px solid #ccc;
     display: block;
     width: 100%;
     color: #2c3e50;
-    padding: 0.5rem 1.5rem;
-    border-radius: 3px;
+    padding: 10px;
+    border-radius: 10px;
     font-size: 1rem;
 }
 
@@ -202,6 +203,7 @@ h3 {
     border-radius: 10px;
     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
     background: #fff;
+    min-height: 100vh;
 }
 
 .card.marked {
@@ -218,6 +220,8 @@ h3 {
     margin: 0;
     padding: 0;
     list-style: none;
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 
 .list-item {
@@ -408,4 +412,9 @@ h3 {
 
 .remove-btn:hover path {
     fill: red;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
 }
