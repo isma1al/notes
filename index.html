@@ -22,7 +22,11 @@
                 @keypress.enter="addNewNote"
                 >
             </div>
-            <button @click="addNewNote" class="btn">Добавить</button>
+            <div class="btns">
+                <button @click="addNewNote" class="btn">Добавить</button>
+            <button v-if="notes.length > 1" @click="clearNote" class="btn danger">Очистить заметки</button>
+            </div>
+            
             <hr>
             <ul class="list" v-if="notes.length !== 0">
                 <li class="list-item " v-for="(myNote,index) in notes">
@@ -32,11 +36,11 @@
                         <path d="M20.0799 18.6155L17.6311 16.1667L20.0798 13.718C21.0241 12.7738 19.5596 11.3093 18.6154 12.2536L16.1667 14.7023L13.7179 12.2535C12.7738 11.3095 11.3095 12.7738 12.2535 13.7179L14.7023 16.1667L12.2536 18.6154C11.3093 19.5596 12.7738 21.0241 13.718 20.0798L16.1667 17.6311L18.6155 20.0799C19.5597 21.0241 21.0241 19.5597 20.0799 18.6155Z" fill="#B5B5B5"/>
                     </svg>         
                 </li>
-                <hr>
-                <li>
-                   <b>Количество заметок: {{ notes.length }}</b>
-                </li>
+                
+               
             </ul>
+            <hr v-if="notes.length > 0">
+            <b v-if="notes.length > 0">Количество заметок: {{ notes.length }}</b>
             <div v-if="notes.length === 0">Добавьте заметку.</div>
         </div>
     </div>
