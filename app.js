@@ -29,6 +29,10 @@ const App = {
 
         removeNote(index){
            this.notes.splice(index,1)
+        },
+        clearNote(){
+            this.notes.splice(0,this.notes.length)
+            console.log(this.notes);
         }
     }
 }
